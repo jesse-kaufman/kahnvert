@@ -36,100 +36,67 @@ _This is a work in progress! I'm currently working on the API. Once it's finishe
 
 ### Retrieving task information
 
-#### GET /api/v1/tasks
+**GET /api/v1/tasks** - Returns all tasks from database.
 
-Returns all tasks from database.
+- Defaults to selecting tasks where status !== "deleted" (as these are considered deleted).
+- Optional URL parameters:
+  - libraryId: MongoDB ObjectID; _filters tasks by library_
+  - status: String; _filters tasks by status_
+- _Note:_ To retrieve tasks regardless of status, set status = "any" in the URL parameters.
 
-Defaults to selecting tasks where status !== "deleted" (as these are considered deleted).
+**GET /api/v1/tasks/:taskId** - Returns a specific task.
 
-Optional URL parameters:
+- Defaults to selecting tasks where status !== "deleted" (as these are considered deleted).
+- To retrieve task regardless of status, set status = "any" in the URL parameters.
 
-- libraryId: MongoDB ObjectID; _filters tasks by library_
-- status: String; _filters tasks by status_
+**GET /api/v1/tasks/:taskId/log** - Returns all log entries for task.
 
-Note: To retrieve tasks regardless of status, set status = "any" in the URL parameters.
-
-#### GET /api/v1/tasks/:taskId
-
-Returns a specific task.
-
-Defaults to selecting tasks where status !== "deleted" (as these are considered deleted).
-
-To retrieve task regardless of status, set status = "any" in the URL parameters.
-
-#### GET /api/v1/tasks/:taskId/log
-
-Returns all log entries for task.
-
----
+- _More documentation coming._
 
 ### Creating new tasks
 
-#### POST /api/v1/tasks/:taskId
+**POST /api/v1/tasks/:taskId** - Inserts new task.
 
-Inserts new task.
-
-_More documentation coming._
-
----
+- _More documentation coming._
 
 ### Updating tasks
 
-#### PUT /api/v1/tasks/:taskId
+**PUT /api/v1/tasks/:taskId** - Updates task.
 
-Updates task.
+- _More documentation coming._
 
-_More documentation coming._
+**PUT /api/v1/tasks/:taskId/log** - Adds log entry for task.
 
-#### PUT /api/v1/tasks/:taskId/log
-
-Adds log entry for task.
-
-_Not supported yet._
-
----
+- _Not supported yet._
 
 ### Deleting tasks
 
-_Not supported yet._
-
----
+- _Not supported yet._
 
 ### Retrieving library information
 
-#### GET /api/v1/libraries
+**GET /api/v1/libraries** - Gets all libraries from database.
 
-Gets all libraries from database.
+- _Not supported yet._
 
-_Not supported yet._
+**GET /api/v1/libraries/:libraryId/tasks** - Gets all tasks for library.
 
-#### GET /api/v1/libraries/:libraryId/tasks
-
-Gets all tasks for library.
-
-Defaults to selecting tasks where status !== "deleted" (as these are considered deleted).
-
-_Not supported yet._
-
----
+- Defaults to selecting tasks where status !== "deleted" (as these are considered deleted).
+- _Not supported yet._
 
 ### Creating new libraries
 
-_Not supported yet._
-
----
+- _Not supported yet._
 
 ### Updating libraries
 
-_Not supported yet._
-
----
+- _Not supported yet._
 
 ### Deleting libraries
 
-_Not supported yet._
+- _Not supported yet._
 
----
+
 
 ---
 
