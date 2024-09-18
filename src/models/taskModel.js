@@ -1,4 +1,4 @@
-import VideoInfoSchema from "./taskModel/schemas.js";
+import { TaskLogSchema, VideoInfoSchema } from "./taskModel/schemas.js";
 import methods from "./taskModel/methods.js";
 import mongoose from "mongoose";
 import statics from "./taskModel/statics.js";
@@ -46,9 +46,14 @@ const TaskSchema = new mongoose.Schema(
     startedAt: {
       type: Date,
     },
+    progress: {
+      type: Number,
+      default: 0,
+    },
     endedAt: {
       type: Date,
     },
+    log: [TaskLogSchema],
   },
   {
     timestamps: true,

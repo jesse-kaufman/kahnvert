@@ -1,6 +1,21 @@
 import mongoose from "mongoose-fill";
 
 /**
+ * Task log schema
+ */
+export const TaskLogSchema = new mongoose.Schema({
+  timestamp: {
+    type: Date,
+    default: Date.now,
+    required: true,
+  },
+  message: {
+    type: String,
+    required: true,
+  },
+});
+
+/**
  * Audio stream schema
  */
 const AudioStreamSchema = new mongoose.Schema({
@@ -86,7 +101,7 @@ const VideoStreamSchema = new mongoose.Schema({
 /**
  * Video information schema
  */
-const VideoInfoSchema = new mongoose.Schema({
+export const VideoInfoSchema = new mongoose.Schema({
   streamCount: {
     type: Number,
     required: true,
@@ -114,5 +129,3 @@ const VideoInfoSchema = new mongoose.Schema({
   videoStreams: [VideoStreamSchema],
   audioStreams: [AudioStreamSchema],
 });
-
-export default VideoInfoSchema;
