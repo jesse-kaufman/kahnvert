@@ -17,8 +17,6 @@ _This is a work in progress! I'm currently working on the API. Once it's finishe
 
 ---
 
----
-
 ## How It Works (or will work)
 
 1. Libraries are setup in the server config
@@ -33,8 +31,6 @@ _This is a work in progress! I'm currently working on the API. Once it's finishe
 8. Status of task is also updated via REST
 9. If the task fails, an error is logged locally and in the task log (via REST)
 10. On task completion (whether successful or not), the next task is loaded and the process repeats until no more tasks are remaining
-
----
 
 ---
 
