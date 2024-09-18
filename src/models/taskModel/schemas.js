@@ -22,7 +22,7 @@ const AudioStreamSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  sampleFormat: {
+  sampleRate: {
     type: String,
     required: true,
   },
