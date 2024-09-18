@@ -8,3 +8,8 @@ export const connectDb = async () => {
     console.error("Error connecting to MongoDB:", error);
   }
 };
+
+export const disconnectDb = async () => {
+  await mongoose.connection.close();
+  console.log("MongoDB connection closed");
+};
