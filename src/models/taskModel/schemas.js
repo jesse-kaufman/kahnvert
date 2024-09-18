@@ -1,5 +1,8 @@
 import mongoose from "mongoose-fill";
 
+/**
+ * Audio stream schema
+ */
 const AudioStreamSchema = new mongoose.Schema({
   index: {
     type: Number,
@@ -31,6 +34,9 @@ const AudioStreamSchema = new mongoose.Schema({
   title: { type: String },
 });
 
+/**
+ * Video stream schema
+ */
 const VideoStreamSchema = new mongoose.Schema({
   index: {
     type: Number,
@@ -77,6 +83,9 @@ const VideoStreamSchema = new mongoose.Schema({
   },
 });
 
+/**
+ * Video information schema
+ */
 const VideoInfoSchema = new mongoose.Schema({
   streamCount: {
     type: Number,
