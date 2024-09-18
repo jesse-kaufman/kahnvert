@@ -99,6 +99,10 @@ const VideoInfoSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  size: {
+    type: Number,
+    required: true,
+  },
   videoStreams: [VideoStreamSchema],
   audioStreams: [AudioStreamSchema],
 });
