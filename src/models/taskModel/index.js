@@ -1,3 +1,4 @@
+import VideoInfoSchema from "./schemas.js";
 import methods from "./methods.js";
 import mongoose from "mongoose-fill";
 import statics from "./statics.js";
@@ -14,109 +15,6 @@ const validStatuses = [
   "failed",
   "inactive",
 ];
-
-const VideoStreamSchema = new mongoose.Schema({
-  index: {
-    type: Number,
-    required: true,
-  },
-  codecName: {
-    type: String,
-    required: true,
-  },
-  codecLongName: {
-    type: String,
-    required: true,
-  },
-  profile: {
-    type: String,
-  },
-  pixelFormat: {
-    type: String,
-    required: true,
-  },
-  framerate: {
-    type: Number,
-  },
-  bitrate: {
-    type: String,
-  },
-  maxBitrate: {
-    type: String,
-  },
-  aspectRatio: {
-    type: String,
-    required: true,
-  },
-  width: {
-    type: Number,
-    required: true,
-  },
-  height: {
-    type: Number,
-    required: true,
-  },
-  title: {
-    type: String,
-    required: true,
-  },
-});
-
-const AudioStreamSchema = new mongoose.Schema({
-  index: {
-    type: Number,
-    required: true,
-  },
-  codecName: {
-    type: String,
-    required: true,
-  },
-  codecLongName: {
-    type: String,
-    required: true,
-  },
-  profile: { type: String },
-  channels: {
-    type: Number,
-    required: true,
-  },
-  channelLayout: {
-    type: String,
-    required: true,
-  },
-  sampleFormat: {
-    type: String,
-    required: true,
-  },
-  bitrate: { type: String },
-  maxBitrate: { type: String },
-  title: { type: String },
-});
-
-const VideoDataSchema = new mongoose.Schema({
-  streamCount: {
-    type: Number,
-    required: true,
-  },
-  format: {
-    type: String,
-    required: true,
-  },
-  formatLongName: {
-    type: String,
-    required: true,
-  },
-  duration: {
-    type: Number,
-    required: true,
-  },
-  bitrate: {
-    type: Number,
-    required: true,
-  },
-  videoStreams: [VideoStreamSchema],
-  audioStreams: [AudioStreamSchema],
-});
 
 const TaskSchema = new mongoose.Schema(
   {
@@ -136,32 +34,12 @@ const TaskSchema = new mongoose.Schema(
       },
     },
     inputData: {
-      streamCount: {
-        type: Number,
-        required: true,
-      },
-      format: {
-        type: String,
-        required: true,
-      },
-      formatLongName: {
-        type: String,
-        required: true,
-      },
-      duration: {
-        type: Number,
-        required: true,
-      },
-      bitrate: {
-        type: Number,
-        required: true,
-      },
-      videoStreams: [VideoStreamSchema],
-      audioStreams: [AudioStreamSchema],
+      type: VideoInfoSchema,
+      required: true,
     },
     outputData: {
-      videoStreams: [VideoStreamSchema],
-      audioStreams: [AudioStreamSchema],
+      type: VideoInfoSchema,
+      required: true,
     },
     assignedNode: {
       type: String,
