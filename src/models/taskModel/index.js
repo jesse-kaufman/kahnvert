@@ -1,6 +1,6 @@
 import VideoInfoSchema from "./schemas.js";
 import methods from "./methods.js";
-import mongoose from "mongoose-fill";
+import mongoose from "mongoose";
 import statics from "./statics.js";
 
 /**
