@@ -13,7 +13,7 @@ const validStatuses = [
   "complete",
   "missing",
   "failed",
-  "inactive",
+  "deleted",
 ];
 
 const TaskSchema = new mongoose.Schema(

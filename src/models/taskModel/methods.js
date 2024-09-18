@@ -1,13 +1,13 @@
 import VideoModel from "../videoModel.js";
 
 /**
- * Does the actual "delete" in MongoDB by marking item inactive
+ * Does the actual "delete" in MongoDB
  *
  * @returns {Object} Task object after saving
  */
 export const doDelete = async function () {
   // Delete Task
-  this.status = "inactive";
+  this.status = "deleted";
   const result = await this.save();
 
   return result;
