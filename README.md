@@ -4,7 +4,7 @@ A distributed media conversion system using ffmpeg and written in Node.js.
 
 This project was inspired by my experience with [FileFlows](https://github.com/revenz/FileFlows) and [Unmanic](https://github.com/Unmanic/unmanic). After many, many hours I was able to get both setup _really_ close to what I wanted, but I could never get either to be perfect.
 
-_That's NOT a dig on either project_—they're both awesome! I'm just a control freak and didn't want to be limited by number of processing nodes. Plus, I needed a practical project to use to further my Node.js experience and to work as a portfolio piece.
+_That's NOT a dig on either project_—they're both awesome! I'm just a control freak and didn't want to be limited by number of processing nodes. Plus, I needed a practical project to further my Node.js knowledge and as a portfolio piece.
 
 KAHNvert is a mashup of the word "convert" (as in the noun meaning "someone who has converted") and the emotion of Captain Kirk yelling out "KAAAAAAAAAHN!" in absolute frustration when I couldn't get things working with FileFlows or Unmanic exactly as I wanted. _(Again, that's my impatience and neurodivergent need for control—they are both great projects and a million times more mature than this project will likely ever be!)_
 
