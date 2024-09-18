@@ -52,7 +52,7 @@ const VideoStreamSchema = new mongoose.Schema({
     required: true,
   },
   framerate: {
-    type: Number,
+    type: String,
   },
   bitrate: {
     type: String,
