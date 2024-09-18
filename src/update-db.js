@@ -56,9 +56,16 @@ const videoInfo = {
 };
 
 console.log(videoInfo);
-disconnectDb();
-//const task = await taskModel.findOne({ filename: IN_FILE });
 
-//const ffmpegCommand = video.getFfmpegCommand();
+const task = await taskModel.findOne({ filename: IN_FILE });
+
+task.inputData = videoInfo;
+
+try {
+  await task.save();
+} catch (err) {
+  console.error(err.message);
+}
 //console.log(task);
-//console.log(ffmpegCommand);
+
+disconnectDb();
