@@ -39,7 +39,6 @@ const TaskSchema = new mongoose.Schema(
     },
     outputData: {
       type: VideoInfoSchema,
-      required: true,
     },
     assignedNode: {
       type: String,
