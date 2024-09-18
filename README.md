@@ -15,8 +15,6 @@ KAHNvert is built on a client/server model:
 
 _This is a work in progress! I'm currently working on the API. Once it's finished I will implement library scanning, then the actual processing with ffmpeg on client nodes._
 
----
-
 ## How It Works (or will work)
 
 1. Libraries are setup in the server config
