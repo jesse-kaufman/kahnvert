@@ -1,7 +1,7 @@
-import VideoInfoSchema from "./schemas.js";
-import methods from "./methods.js";
+import VideoInfoSchema from "./taskModel/schemas.js";
+import methods from "./taskModel/methods.js";
 import mongoose from "mongoose";
-import statics from "./statics.js";
+import statics from "./taskModel/statics.js";
 
 /**
  * List of valid Task statuses.

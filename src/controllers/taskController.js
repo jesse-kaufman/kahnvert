@@ -1,4 +1,4 @@
-import TaskModel from "../models/taskModel/index.js";
+import TaskModel from "../models/taskModel.js";
 import { httpCodes } from "../config/config.js";
 import taskValidators from "../services/taskValidators.js";
 
