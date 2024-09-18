@@ -32,9 +32,7 @@ _This is a work in progress! I'm currently working on the API. Once it's finishe
 
 ---
 
-## API Documentation
-
-### Retrieving task information
+## Retrieving task information
 
 **GET /api/v1/tasks** - Returns all tasks from database.
 
@@ -53,13 +51,13 @@ _This is a work in progress! I'm currently working on the API. Once it's finishe
 
 - _More documentation coming._
 
-### Creating new tasks
+## Creating new tasks
 
 **POST /api/v1/tasks/:taskId** - Inserts new task.
 
 - _More documentation coming._
 
-### Updating tasks
+## Updating tasks
 
 **PUT /api/v1/tasks/:taskId** - Updates task.
 
@@ -69,11 +67,11 @@ _This is a work in progress! I'm currently working on the API. Once it's finishe
 
 - _Not supported yet._
 
-### Deleting tasks
+## Deleting tasks
 
 - _Not supported yet._
 
-### Retrieving library information
+## Retrieving library information
 
 **GET /api/v1/libraries** - Gets all libraries from database.
 
@@ -84,19 +82,17 @@ _This is a work in progress! I'm currently working on the API. Once it's finishe
 - Defaults to selecting tasks where status !== "deleted" (as these are considered deleted).
 - _Not supported yet._
 
-### Creating new libraries
+## Creating new libraries
 
 - _Not supported yet._
 
-### Updating libraries
+## Updating libraries
 
 - _Not supported yet._
 
-### Deleting libraries
+## Deleting libraries
 
 - _Not supported yet._
-
-
 
 ---
 
