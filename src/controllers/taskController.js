@@ -16,12 +16,11 @@ export const getTask = async (req, res) => {
     task = await TaskModel.getById(req.params.taskId, "any");
   } catch (err) {
     console.error(err);
-    res.status(httpCodes.SERVER_ERROR).json({ error: err.message });
+    return res.status(httpCodes.SERVER_ERROR).json({ error: err.message });
   }
 
   if (task == null) {
-    res.status(httpCodes.NOT_FOUND).json({ error: "Task not found" });
-    return;
+    return res.status(httpCodes.NOT_FOUND).json({ error: "Task not found" });
   }
 
   res.status(httpCodes.OK).json(task);
@@ -60,10 +59,9 @@ export const addTask = async (req, res) => {
   //
   const taskExists = await taskValidators.nameExists(req.body.name);
   if (taskExists === false) {
-    res
+    return res
       .status(httpCodes.CONFLICT)
       .json({ error: "A Task with that name already exists" });
-    return;
   }
 
   // Create new Task object from data sent
@@ -73,8 +71,7 @@ export const addTask = async (req, res) => {
   try {
     await newTask.save();
   } catch (err) {
-    res.status(httpCodes.SERVER_ERROR).json({ error: err.message });
-    return;
+    return res.status(httpCodes.SERVER_ERROR).json({ error: err.message });
   }
 
   res.status(httpCodes.CREATED).json(newTask);
@@ -101,10 +98,9 @@ export const updateTask = async (req, res) => {
     if (!wasModified) {
       console.log("No changes made to Task");
     }
-  } catch (e) {
-    console.error(e);
-    res.status(httpCodes.SERVER_ERROR).json({ error: e.message });
-    return;
+  } catch (err) {
+    console.error(err);
+    return res.status(httpCodes.SERVER_ERROR).json({ error: err.message });
   }
 
   res.status(httpCodes.OK).json(task);
@@ -120,16 +116,14 @@ export const deleteTask = async (req, res) => {
   const task = await TaskModel.findById(req.params.taskId);
 
   if (task == null) {
-    res.status(httpCodes.NOT_FOUND).json({ error: "Task not found" });
-    return;
+    return res.status(httpCodes.NOT_FOUND).json({ error: "Task not found" });
   }
 
   try {
     await task.doDelete();
   } catch (err) {
     console.error(err);
-    res.status(httpCodes.SERVER_ERROR).json({ error: err.message });
-    return;
+    return res.status(httpCodes.SERVER_ERROR).json({ error: err.message });
   }
 
   res.status(httpCodes.OK).json(task);
