@@ -10,8 +10,12 @@ const getData = (file) => {
   // Wrap ffmpeg.ffprobe() call in promise
   return new Promise((resolve, reject) => {
     ffmpeg.ffprobe(file, (error, response) => {
-      if (error) reject(error);
+      if (error) {
+        console.error(error);
+        reject(error);
+      }
 
+      console.log(response);
       resolve(response);
     });
   });
