@@ -97,4 +97,5 @@ const read = async (file) => {
 
   return data;
 };
+
 export default { read };
