@@ -1,11 +1,11 @@
-import { connectDb, disconnectDb } from "./config/db.js";
 import config from "./config/config.js";
+import db from "./config/db.js";
 import taskModel from "./models/taskModel.js";
 import videoModel from "./models/videoModel.js";
 
 console.log(config);
 // MongoDB connection
-connectDb();
+db.connect();
 
 const IN_FILE =
   "Hellraiser (1987)/Hellraiser (1987) Remastered [WEBDL-1080p].mkv";
@@ -68,4 +68,4 @@ try {
 }
 //console.log(task);
 
-disconnectDb();
+db.close();

@@ -1,14 +1,14 @@
 // Server
 import compression from "compression";
 import config from "./config/config.js";
-import { connectDb } from "./config/db.js";
 import cors from "cors";
+import db from "./config/db.js";
 import errorHandler from "errorhandler";
 import express from "express";
 import taskRoutes from "./routes/taskRoutes.js";
 
 // MongoDB connection
-connectDb();
+db.connect();
 
 // Setup Express
 const app = express();
