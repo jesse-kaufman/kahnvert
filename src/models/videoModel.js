@@ -80,7 +80,7 @@ const read = async (file) => {
   const outputFilename = file.replace(path.extname(file), "mkv");
 
   // Read video file data
-  const data = await ffprobe.getData(inputFile);
+  const data = await ffprobe(inputFile);
 
   // Set input/output filenames
   data.inputFile = inputFile;

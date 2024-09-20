@@ -17,4 +17,4 @@ const getData = (file) => {
   });
 };
 
-export default { getData };
+export default getData;
