@@ -38,9 +38,6 @@ if (process.env.NODE_ENV === "production") {
 // Plant routes
 app.use("/api/v1/tasks", taskRoutes);
 
-// Log routes
-//app.use("/api/v1/logs", logRoutes);
-
 // Start the server
 const server = app.listen(config.apiPort, () => {
   console.log(`Express running → PORT ${server.address().port}`);

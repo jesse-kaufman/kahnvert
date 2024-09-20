@@ -1,8 +1,4 @@
 /* eslint-disable no-magic-numbers */
-//import dotenv from "dotenv";
-
-// Environment variables
-//dotenv.config();
 
 const config = {
   apiPort: process.env?.PORT || 8999,
