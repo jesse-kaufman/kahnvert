@@ -1,4 +1,4 @@
-import config from "./configModel.js";
+import config from "./libraryModel.js";
 import ffmpegBuilder from "../services/ffmpegBuilder.js";
 import ffprobe from "../services/ffprobe.js";
 import metadata from "../services/metadata.js";

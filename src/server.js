@@ -1,6 +1,6 @@
 // Server
+import { apiPort } from "./config/config.js";
 import compression from "compression";
-import config from "./config/config.js";
 import cors from "cors";
 import db from "./config/db.js";
 import errorHandler from "errorhandler";
@@ -39,6 +39,6 @@ if (process.env.NODE_ENV === "production") {
 app.use("/api/v1/tasks", taskRoutes);
 
 // Start the server
-const server = app.listen(config.apiPort, () => {
+const server = app.listen(apiPort, () => {
   console.log(`Express running → PORT ${server.address().port}`);
 });

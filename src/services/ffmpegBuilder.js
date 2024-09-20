@@ -1,4 +1,4 @@
-import config from "../models/configModel.js";
+import config from "../models/libraryModel.js";
 
 /**
  * Gets input arguments for FFMPEG command

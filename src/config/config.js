@@ -1,6 +1,6 @@
 /* eslint-disable no-magic-numbers */
 
-const config = {
+export const apiPort = {
   apiPort: process.env?.PORT || 8999,
 };
 
@@ -15,5 +15,3 @@ export const httpCodes = {
   CONFLICT: 409,
   SERVER_ERROR: 500,
 };
-
-export default config;
