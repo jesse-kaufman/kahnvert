@@ -12,11 +12,14 @@ import path from "path";
  */
 function getAudioStreams() {
   return this.streams.filter((stream) => {
+    // Skip non-audio streams
     if (stream.codec_type !== "audio") return false;
 
+    // Filter out streams with non-English language
     if (stream.tags.language != null && stream.tags.language !== "eng")
       return false;
 
+    // Continue to next stream in array
     return true;
   });
 }
