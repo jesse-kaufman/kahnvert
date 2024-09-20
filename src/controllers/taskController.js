@@ -57,7 +57,8 @@ export const addTask = async (req, res) => {
   //
   // Check if a Task with the same name already exists
   //
-  const taskExists = await taskValidators.nameExists(req.body.name);
+  const taskExists = await taskValidators.fileExists(req.body.filename);
+
   if (taskExists === false) {
     return res
       .status(httpCodes.CONFLICT)

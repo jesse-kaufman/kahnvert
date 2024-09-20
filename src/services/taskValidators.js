@@ -4,11 +4,12 @@ const fileExists = async (filename) => {
   if (!filename) return false;
 
   const task = await TaskModel.findOne({
-    status: { $in: ["pending", "processing"] },
+    status: { $ne: "deleted" },
     filename: filename.trim(),
   });
 
-  return task == null;
+  // Return true if the file exists in the task list, otherwise return false
+  return task != null;
 };
 
 export default { fileExists };
