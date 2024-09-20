@@ -7,7 +7,7 @@ import ffmpeg from "fluent-ffmpeg";
  * @returns {Object} Object containing video data
  */
 const getData = (file) => {
-  // Wrap ffmpeg.videoFile() call in promise
+  // Wrap ffmpeg.ffprobe() call in promise
   return new Promise((resolve, reject) => {
     ffmpeg.ffprobe(file, (error, response) => {
       if (error) reject(error);
