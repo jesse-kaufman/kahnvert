@@ -66,6 +66,5 @@ try {
 } catch (err) {
   console.error(err.message);
 }
-//console.log(task);
 
 db.close();
